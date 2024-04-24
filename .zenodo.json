@@ -1,0 +1,38 @@
+{
+  "access_right": "open",
+  "title": "A quarto extension for a website project with the corporate identity of the Flemish government",
+  "description": "<p>Replace this with a short description of the project. It becomes the\nabstract of the project in the citation information. And the project\ndescription at https://zenodo.org<\/p>",
+  "keywords": [
+    "quarto",
+    "extension",
+    "corporate identity",
+    "Flemish government"
+  ],
+  "upload_type": "software",
+  "license": "CC-BY-4.0",
+  "language": "eng",
+  "contributors": [
+    {
+      "name": "Onkelinx, Thierry",
+      "affiliation": "Research Institute for Nature and Forest (INBO)",
+      "orcid": "0000-0001-8804-4216",
+      "type": "ContactPerson"
+    },
+    {
+      "name": "Research Institute for Nature and Forest (INBO)",
+      "type": "RightsHolder"
+    }
+  ],
+  "creators": [
+    {
+      "name": "Onkelinx, Thierry",
+      "affiliation": "Research Institute for Nature and Forest (INBO)",
+      "orcid": "0000-0001-8804-4216"
+    }
+  ],
+  "communities": [
+    {
+      "identifier": "inbo"
+    }
+  ]
+}

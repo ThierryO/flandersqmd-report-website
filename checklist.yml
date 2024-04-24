@@ -1,0 +1,22 @@
+description: Configuration file for checklist::check_pkg()
+package: no
+allowed:
+  warnings: []
+  notes:
+  - motivation: Draft version
+    value: no DOI badge found in README.md
+  - motivation: Draft version
+    value: No version information found in README.md
+  - motivation: Draft version
+    value: no website badge found in README.md
+required:
+- CITATION
+- checklist
+- filename conventions
+- license
+- spelling
+spelling:
+  default: en-GB
+  ignore:
+  - .github
+  - LICENSE.md
