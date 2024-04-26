@@ -1,0 +1,62 @@
+project:
+  type: flandersqmd-report-website
+  preview:
+    port: 4200
+    browser: true
+
+lang: en-GB
+
+format:
+  flandersqmd-report-website-html:
+    bibliography: references.bib
+
+flandersqmd:
+  title: Title for the example website
+  subtitle: The optional subtitle
+  author:
+    - name:
+        given: Given
+        family: Family
+      email: given.family@vlaanderen.be
+      orcid: 0000-0002-1825-0097
+      corresponding: true
+      affiliation:
+        - Government of Flanders
+  reviewer:
+    - name:
+        given: Voornaam
+        family: Achternaam
+  year: year
+  reportnr: reportnumber
+  cover: cover.png
+  ordernr: optional order number
+  depotnr: optional depot number
+  doi: 10.5281/zenodo.842223
+
+website:
+  title: Optional title for the navbar
+  navbar:
+    left:
+      - text: Cover
+        file: example.qmd
+      - abstract.md
+    tools:
+      - icon: mastodon
+        href: https://mastodon.online/@inbo
+      - icon: twitter
+        href: https://twitter.com/Vlaamseoverheid
+      - icon: facebook
+        href: https://www.facebook.com/vlaamseoverheid/
+      - icon: github
+        menu:
+          - text: Source Code
+            url:  https://github.com/inbo
+          - text: Report a Bug
+            url:  https://github.com/inbo
+  sidebar:
+    logo: cover.png
+    style: "floating"
+    contents:
+    - text: Cover
+      file: example.qmd
+    - abstract.md

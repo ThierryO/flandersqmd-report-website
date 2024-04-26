@@ -20,5 +20,5 @@ docs
 libs
 output
 renv/library
-
+_site
 /.quarto/
