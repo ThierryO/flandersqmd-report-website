@@ -3,6 +3,9 @@ project:
   preview:
     port: 4200
     browser: true
+execute:
+  echo: false
+  freeze: auto
 
 lang: en-GB
 
@@ -38,8 +41,13 @@ website:
   navbar:
     left:
       - text: Cover
-        file: example.qmd
-      - abstract.md
+        file: index.qmd
+      - text: Abstract
+        file: abstract.md
+      - text: Typography
+        file: headings.qmd
+      - text: Code
+        file: code.qmd
     tools:
       - icon: mastodon
         href: https://mastodon.online/@inbo
@@ -58,5 +66,36 @@ website:
     style: "floating"
     contents:
     - text: Cover
-      file: example.qmd
+      file: index.qmd
     - abstract.md
+    - samenvatting.md
+    - resume.md
+    - recommendations.qmd
+    - introduction.md
+    - section: Typography
+      file: headings.qmd
+      contents:
+        - headings.qmd
+        - fonts.qmd
+        - lists.qmd
+        - boxes.qmd
+    - section: Other elements
+      file: crossreference.md
+      contents:
+        - crossreference.md
+        - static-figure.md
+        - static-table.md
+        - equations.md
+        - citations.md
+        - language.md
+    - section: Code generated content
+      file: code.qmd
+      contents:
+        - code.qmd
+        - code-figure.qmd
+        - code-table.qmd
+    - section: Appendix
+      file: appendix-first.qmd
+      contents:
+        - appendix-first.qmd
+        - appendix-second.qmd
