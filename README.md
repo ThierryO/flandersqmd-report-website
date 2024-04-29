@@ -1,7 +1,7 @@
 <!-- badges: start -->
-![GitHub](https://img.shields.io/github/license/ThierryO/flandersqmd-website)
-![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/ThierryO/flandersqmd-website/check-project)
-![GitHub repo size](https://img.shields.io/github/repo-size/ThierryO/flandersqmd-website)
+![GitHub](https://img.shields.io/github/license/ThierryO/flandersqmd-report-website)
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/ThierryO/flandersqmd-report-website/check-project)
+![GitHub repo size](https://img.shields.io/github/repo-size/ThierryO/flandersqmd-report-website)
 <!-- badges: end -->
 
 # A quarto extension for a website project with the corporate identity of the Flemish government
