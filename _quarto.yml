@@ -14,6 +14,7 @@ format:
     bibliography: references.bib
 
 flandersqmd:
+  entity: INBO
   title: Title for the example website
   subtitle: The optional subtitle
   author:

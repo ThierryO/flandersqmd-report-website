@@ -2,7 +2,46 @@ function is_empty(s)
   return s == nil or s == ''
 end
 
-function translation(lang)
+function translation_entity(result, lang, entity)
+  if (entity == "INBO") then
+    if (lang == "nl-BE") then
+      result.address = "INBO Brussel, Herman Teirlinckgebouw, Havenlaan 88 bus 73, 1000 Brussel"
+      result.city = "Brussel"
+      result.mission = "Het INBO is het onafhankelijk onderzoeksinstituut van de Vlaamse overheid dat via toegepast wetenschappelijk onderzoek, data- en kennisontsluiting het biodiversiteitsbeleid en -beheer onderbouwt en evalueert."
+      result.name = "Instituut voor Natuur- en Bosonderzoek"
+      result.series = "Rapporten van het"
+      result.url = "https://www.vlaanderen.be/inbo"
+      result.url_text = "vlaanderen.be/inbo"
+    elseif (lang == "fr-FR") then
+      result.address = "INBO Bruxelles, Herman Teirlinckgebouw, Avenu du Port 88 boîte 73, 1000 Bruxelles"
+      result.city = "Bruxelles"
+      result.mission = "l'Institut de Recherche sur la Nature et les Forêts ('Instituut voor Natuur- en Bosonderzoek', INBO) est un institut de recherche indépendant du gouvernement flamand, qui étaye et évalue la politique et la gestion en matière de biodiversité par la recherche scientifique appliquée, l'intégration et la dissémination publique de données et de connaissances."
+      result.name = "l'Institut de Recherche sur la Nature et les Forêts"
+      result.series = "Rapports de"
+      result.url = "https://www.vlaanderen.be/inbo/en-gb/homepage/"
+      result.url_text = "vlaanderen.be/inbo"
+    else
+      result.address = "INBO Brussels, Herman Teirlinckgebouw, Havenlaan 88 bus 73, 1000 Brussel"
+      result.city = "Brussels"
+      result.mission = "The Research Institute for Nature and Forest (INBO) is an independent research institute of the Flemish government. Through applied scientific research, open data and knowledge, integration and disclosure, it underpins and evaluates biodiversity policy and management."
+      result.name = "Research Instute for Nature and Forest"
+      result.url = "https://www.vlaanderen.be/inbo/en-gb/homepage/"
+      result.url_text = "vlaanderen.be/inbo"
+    end
+    result.issn_nr = "1782-9054"
+    result.vu_name = "Hilde Eggermont"
+  else
+    result.address = '<h1 class = "missing">!!! flandersqmd.entity must be equal to INBO. Please contact the maintainer if you need a different entity!!!</h1>'
+    result.city = '<h1 class = "missing">!!! flandersqmd.entity must be equal to INBO. Please contact the maintainer if you need a different entity!!!</h1>'
+    result.mission = '<h1 class = "missing">!!! flandersqmd.entity must be equal to INBO. Please contact the maintainer if you need a different entity!!!</h1>'
+    result.name = '<h1 class = "missing">!!! flandersqmd.entity must be equal to INBO. Please contact the maintainer if you need a different entity!!!</h1>'
+    result.url = ''
+    result.url_text = '<h1 class = "missing">!!! flandersqmd.entity must be equal to INBO. Please contact the maintainer if you need a different entity!!!</h1>'
+  end
+  return result
+end
+
+function translation(lang, entity)
   local result
   if (lang == "nl-BE") then
     result = {
@@ -15,7 +54,6 @@ function translation(lang)
       export = "Exporteer referentie als",
       location = "Vestiging",
       mission = "Hier komt de missie",
-      name = "Vlaamse overheid",
       ordernr = "Opdrachtnummer",
       reviewer = "Nagelezen door",
       series = "Rapporten van het",
@@ -35,7 +73,6 @@ function translation(lang)
       export = "Exporter la référence à",
       location = "Adresse",
       mission = "Mission statement",
-      name = "l'Autorité flamande ",
       ordernr = "Numéro de commande",
       reviewer = "Examiné par",
       series = "Rapports de",
@@ -55,7 +92,6 @@ function translation(lang)
       export = "Export reference to",
       location = "Location:",
       mission = "Misson statement",
-      name = "Government of Flanders",
       ordernr = "Order number",
       reviewer = "Reviewed by",
       series = "Reports of the",
@@ -65,7 +101,7 @@ function translation(lang)
       year = "Published during"
     }
   end
-  return result
+  return translation_entity(result, lang, entity)
 end
 
 function abbreviate_person(person, i, type, n)
@@ -113,9 +149,13 @@ end
 return {
   {
     Meta = function(meta)
-      meta.translation = translation(pandoc.utils.stringify(meta.lang))
-      meta.issn = "ISSN nummer"
-      meta.vu = "Naam verantwoordelijke uitgever"
+      if is_empty(meta.flandersqmd.entity) then
+        meta.translation = translation(pandoc.utils.stringify(meta.lang), "INBO")
+      else
+        meta.translation = translation(
+          pandoc.utils.stringify(meta.lang), pandoc.utils.stringify(meta.flandersqmd.entity)
+        )
+      end
       if is_empty(meta.flandersqmd.author) then
         meta.shortauthor = pandoc.RawInline(
           "html",

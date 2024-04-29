@@ -182,18 +182,18 @@ return {
   end
 
 --[ insert issn]
-  if not is_empty(meta.issn) then
+  if not is_empty(meta.translation.issn_nr) then
     z = z .. '<div>' .. '<div class="quarto-title-meta-heading">ISSN</div>' ..
       '<div class="quarto-title-meta-contents">' ..
-      pandoc.utils.stringify(meta.issn) .. '</div>'.. '</div>'
+      meta.translation.issn_nr .. '</div>'.. '</div>'
   end
 
 --[ insert vu]
-  if not is_empty(meta.vu) then
+  if not is_empty(meta.translation.vu_name) then
     z = z .. '<div>' .. '<div class="quarto-title-meta-heading">' ..
       meta.translation.vu .. '</div>' ..
       '<div class="quarto-title-meta-contents">' .. '<p>' ..
-      pandoc.utils.stringify(meta.vu) .. '</div>'.. '</div>'
+      meta.translation.vu_name .. '</div>'.. '</div>'
   end
 
 --[[end meta]]
@@ -382,6 +382,7 @@ return {
 
 --[[finalise]]
     z = z .. '</div>'
+
     return pandoc.RawInline("html", z)
   end
 }
