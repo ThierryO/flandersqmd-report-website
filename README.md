@@ -120,4 +120,6 @@ Shortcodes are special markdown directives that generate various types of conten
 More information on the [Quarto website](https://quarto.org/docs/extensions/shortcodes.html).
 
 - `{{< colophon >}}`: Displays the colophon.
-  See [index.qmd](index.qmd) for an example.
+  See
+[index.md](index.md)<!-- spell-check: ignore-->
+for an example.

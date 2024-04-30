@@ -1,7 +1,7 @@
 {
   "access_right": "open",
-  "title": "A quarto extension for a website project with the corporate identity of the Flemish government",
-  "description": "<p>Replace this with a short description of the project. It becomes the abstract of the project in the citation information. And the project description at https://zenodo.org<\/p>",
+  "title": "A quarto extension for a report website project with the corporate identity of the Flemish government",
+  "description": "<p>This quarto extension assumes the output is a technical report to be published only as a website. Use this extension when you need to compile all file independently from each other. This can solve the out of memory problems when using a book type project. This repository has a demo report illustrating the available options.<\/p>",
   "keywords": [
     "quarto",
     "extension",

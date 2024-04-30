@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: If you use this software, please cite it using these metadata.
-title: "A quarto extension for a website project with the corporate identity of the
-  Flemish government"
+title: "A quarto extension for a report website project with the corporate identity
+  of the Flemish government"
 authors:
 - given-names: Thierry
   family-names: Onkelinx
@@ -21,5 +21,7 @@ doi: ~
 license: CC-BY-4.0
 repository-code: https://github.com/ThierryO/flandersqmd-report-website/
 type: software
-abstract: "Replace this with a short description of the project.\nIt becomes the abstract
-  of the project in the citation information.\nAnd the project description at https://zenodo.org"
+abstract: "This quarto extension assumes the output is a technical report to be published
+  only as a website.\nUse this extension when you need to compile all file independently
+  from each other.\nThis can solve the out of memory problems when using a book type
+  project.\nThis repository has a demo report illustrating the available options."
