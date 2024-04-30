@@ -3,6 +3,11 @@ project:
   preview:
     port: 4200
     browser: true
+  render:
+    - "*.md"
+    - "*.qmd"
+    - "!LICENSE.md"
+    - "!README.md"
 execute:
   echo: false
   freeze: auto
@@ -42,7 +47,7 @@ website:
   navbar:
     left:
       - text: Cover
-        file: index.qmd
+        file: index.md
       - text: Abstract
         file: abstract.md
       - text: Typography
@@ -53,9 +58,9 @@ website:
       - icon: mastodon
         href: https://mastodon.online/@inbo
       - icon: twitter
-        href: https://twitter.com/Vlaamseoverheid
+        href: https://twitter.com/inbovlaanderen
       - icon: facebook
-        href: https://www.facebook.com/vlaamseoverheid/
+        href: https://www.facebook.com/INBOVlaanderen/
       - icon: github
         menu:
           - text: Source Code
@@ -67,7 +72,7 @@ website:
     style: "floating"
     contents:
     - text: Cover
-      file: index.qmd
+      file: index.md
     - abstract.md
     - samenvatting.md
     - resume.md
