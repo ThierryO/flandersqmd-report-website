@@ -8,15 +8,18 @@ project:
     - "*.qmd"
     - "!LICENSE.md"
     - "!README.md"
+  output-dir: output
+
 execute:
   echo: false
   freeze: auto
 
 lang: en-GB
 
+bibliography: references.bib
+
 format:
-  flandersqmd-report-website-html:
-    bibliography: references.bib
+  flandersqmd-report-website-html+inbo: default
 
 flandersqmd:
   entity: INBO

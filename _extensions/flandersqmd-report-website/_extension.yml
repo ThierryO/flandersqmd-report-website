@@ -18,6 +18,7 @@ contributes:
       toc: true
       html-math-method: katex
       filters:
+        - filters/sidebar.lua
         - filters/translations.lua
       shortcodes:
         - shortcodes/colophon.lua

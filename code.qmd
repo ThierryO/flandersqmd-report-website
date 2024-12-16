@@ -5,7 +5,6 @@
 #| echo: TRUE
 #| error: TRUE
 #| message: TRUE
-#| results: asis
 # logical
 c(TRUE, FALSE)
 # integer
